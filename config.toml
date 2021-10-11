@@ -1,0 +1,48 @@
+baseurl                  = "https://www.fetzu.ch/"           # Your domain name
+languageCode             = "en-us"
+defaultContentLanguage   = "en"
+isMultilingual           = false
+title                    = "fetzu dot ch"
+theme                    = "sam"
+pygmentsStyle            = "friendly"                        # https://help.farbox.com/pygments.html
+pygmentsCodefences       = true
+# googleAnalytics        = ""                               # Tracking code, eg. "UA-111111111-1"
+
+[params]
+    dateform             = "Mon 02 Jan, 2006"
+    dateformfull         = "Mon 2 Jan 2006 15:04:05"
+    #favicon              = "sam.ico"
+    homepage             = "home"                           # What to call the home page link, link will not be rendered if empty
+    footerText           = "(c) 2021 Julien 'fetzu' Bono"
+
+# Metadata for Open Graph and Twitter
+    description          = "Julien 'fetzu' Bono's other website."               # Max 160 characters show in search results
+    #images               = ["tn.png"]                       # Image that shows on Twitter cards and Open Graph links to the site
+    title                = "fetzu dot ch"
+    # rss                = ""
+
+[[params.videoBackground.sources]]
+    source  = "/background.mp4"
+    type    = "video/mp4"
+    poster  = "/background.png"
+[params.videoBackground]
+    overlay = "rgba(0, 0, 0, 0.4)" # optional
+
+[[params.mainMenu]]
+    link = "blog"
+    text = "posts"
+
+[[params.mainMenu]]
+    link = "https://console.fetzu.ch/"
+    text = "console"
+
+[[params.mainMenu]]
+    link = "portfolio"
+    text = "portfolio"
+
+[[params.mainMenu]]
+    link = "about"
+    text = "who is fetzu?"
+
+[imaging]
+    quality = 75

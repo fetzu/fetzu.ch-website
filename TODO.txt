@@ -1,0 +1,18 @@
+# fetzu dot ch v2021.10 | TODO
+
+Code:
+[ ] Find an elegant solution to obfuscate e-mail on "about" page.
+[ ] Make "home" the first link on the footer (or not at all).
+[ ] Look into changing the background color (maybe).
+[ ] Look if possible to integrate the "console" site in the same deployment, or at least to make "/console" take us there.
+
+Write:
+[ ] Write a better "about" page (maybe?).
+[ ] Write a (half-)good first/introduction post.
+[ ] Look into the footer: (c) v. another kind of licence?
+
+Content:
+[ ] Find a cool video and/or picture for the background on home page.
+[ ] Select samples of work to put into portfolio (photos, video-embeds, writing samples/Rankr, code samples, ...).
+[ ] Create favicon and incorporate it.
+[ ] Make image for Open Graph (see config.toml)?
