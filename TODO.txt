@@ -2,7 +2,7 @@
 
 Code:
 [ ] Find an elegant solution to obfuscate e-mail on "about" page.
-[ ] Make "home" the first link on the footer (or not at all).
+[X] Make "home" the first link on the footer (or not at all).
 [ ] Look into changing the background color (maybe).
 [ ] Look if possible to integrate the "console" site in the same deployment, or at least to make "/console" take us there.
 
