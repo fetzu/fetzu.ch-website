@@ -3,7 +3,7 @@
 Code:
 [ ] Find an elegant solution to obfuscate e-mail on "about" page.
 [X] Make "home" the first link on the footer (or not at all).
-[ ] Look into changing the background color (maybe).
+[X] Look into changing the background color (maybe). ($fetzu-bg in /themes/sam/assets/sass/_vars.sass)
 [ ] Look if possible to integrate the "console" site in the same deployment, or at least to make "/console" take us there.
 
 Write:
