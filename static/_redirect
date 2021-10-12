@@ -1,0 +1,2 @@
+# Test of redirect form /console to console.fetzu.ch
+console https://console.fetzu.ch/ 301
