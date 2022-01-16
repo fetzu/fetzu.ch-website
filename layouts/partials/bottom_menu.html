@@ -10,6 +10,13 @@
         {{ end }}
     {{ end }}
 
+    {{ if .Page.Site.Params.homepage }}
+    &#183; 
+    <a href="{{ .Site.Home | relURL }}">
+        {{ .Page.Site.Params.homepage }}
+    </a>
+    {{ end }}
+
     {{ if .Page.Site.Params.mainMenu }}
         {{ range first 1 .Page.Site.Params.mainMenu }}
             <a href="{{ .link | relURL }}">{{ .text }}</a>
@@ -21,12 +28,6 @@
             <a href="{{ .link | relURL }}">{{ .text }}</a>
         {{ end }}
     {{ end }}
-    
-    {{ if .Page.Site.Params.homepage }}
-        &#183; 
-        <a href="{{ .Site.Home | relURL }}">
-            {{ .Page.Site.Params.homepage }}
-        </a>
-    {{ end }}
+
 {{ end }}
 </p>
