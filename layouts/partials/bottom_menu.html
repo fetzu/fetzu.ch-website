@@ -11,10 +11,10 @@
     {{ end }}
 
     {{ if .Page.Site.Params.homepage }}
-    &#183; 
     <a href="{{ .Site.Home | relURL }}">
         {{ .Page.Site.Params.homepage }}
     </a>
+    &#183; 
     {{ end }}
 
     {{ if .Page.Site.Params.mainMenu }}
