@@ -5,7 +5,7 @@ Code:
 [X] Make "home" the first link on the footer (or not at all).
 [X] Look into changing the background color (maybe). ($fetzu-bg in /themes/sam/assets/sass/_vars.sass)
 [X] Look if possible to integrate the "console" site in the same deployment, or at least to make "/console" take us there. (to test, solved with Netlify _redirect file)
-[ ] Make footer year (currently (c)) dynamic.
+[X] Make footer year (currently (c)) dynamic.
 
 Write:
 [ ] Write a better "about" page (maybe?).

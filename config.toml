@@ -13,7 +13,7 @@ pygmentsCodefences       = true
     dateformfull         = "Mon 2 Jan 2006 15:04:05"
     #favicon              = "sam.ico"
     homepage             = "home"                           # What to call the home page link, link will not be rendered if empty
-    footerText           = "(c) 2021 Julien 'fetzu' Bono"
+    footerText           = "(c) {year} Julien 'fetzu' Bono"
 
 # Metadata for Open Graph and Twitter
     description          = "Julien 'fetzu' Bono's other website."               # Max 160 characters show in search results
