@@ -1,3 +1,6 @@
 [submodule "themes/sam"]
 	path = themes/sam
 	url = https://github.com/victoriadrake/hugo-theme-sam.git
+[submodule "content"]
+	path = content
+	url = https://github.com/fetzu/fetzu.ch-content.git
