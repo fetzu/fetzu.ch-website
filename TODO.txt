@@ -1,10 +1,11 @@
 # fetzu dot ch v2021.10 | TODO
 
 Code:
-[-] Find an elegant solution to obfuscate e-mail on "about" page. (Did not find an elegant soltion, I'll stay with the "half obfuscated" solution for now.)
+[ ] Find an elegant solution to obfuscate e-mail on "about" page. (Did not find an elegant soltuion, I'll stay with the "half obfuscated" solution for now.) -> Look into https://github.com/binarykitchen/munge.
 [X] Make "home" the first link on the footer (or not at all).
 [X] Look into changing the background color (maybe). ($fetzu-bg in /themes/sam/assets/sass/_vars.sass)
 [X] Look if possible to integrate the "console" site in the same deployment, or at least to make "/console" take us there. (to test, solved with Netlify _redirect file)
+[ ] Make footer year (currently (c)) dynamic.
 
 Write:
 [ ] Write a better "about" page (maybe?).
