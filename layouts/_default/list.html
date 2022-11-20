@@ -1,0 +1,25 @@
+{{ define "section_content" }}
+	<article class="flex-container">
+			{{ .Content }}
+	</article>
+    <nav role="navigation">
+		{{- range .Data.Pages.GroupByDate "2006" }}
+		<div class="posts-group">
+			<div class="post-year" id="{{ .Key }}">{{ .Key }}</div>
+			<ul class="posts-list">
+				{{- range .Pages }}
+                <li>
+                    {{ if .Params.showDate }}
+                    {{ .Date.Format (.Site.Params.dateformshort)}} >>
+                    {{ end }}
+                    <a href="{{.RelPermalink}}">
+                        {{.Title | markdownify}}
+                    </a>
+                </li>
+				{{- end }}
+			</br>
+			</ul>
+		</div>
+		{{- end }}
+	</nav>
+{{ end }}
