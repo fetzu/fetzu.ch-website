@@ -2,7 +2,7 @@ baseurl                  = "https://www.fetzu.ch/"           # Your domain name
 languageCode             = "en-us"
 defaultContentLanguage   = "en"
 isMultilingual           = false
-title                    = "fetzu dot ch"
+title                    = "fetzu dot ch: palace of the meh"
 theme                    = ["hugo-cloak-email", "sam"]
 pygmentsStyle            = "friendly"                        # https://help.farbox.com/pygments.html
 pygmentsCodefences       = true
@@ -31,7 +31,7 @@ pygmentsCodefences       = true
 
 [[params.mainMenu]]
     link = "blog"
-    text = "posts"
+    text = "blog"
 
 [[params.mainMenu]]
     link = "https://console.fetzu.ch/"
