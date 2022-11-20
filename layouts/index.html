@@ -32,7 +32,7 @@
         {{ else }}
         {{ range .Site.Sections }}
             <a href="{{.RelPermalink}}" class="big-link">
-                {{.Title | markdownify}}
+                {{.Title | markdownify }}
             </a>
         {{ end }}
         {{ end }}
@@ -40,7 +40,7 @@
     </nav>
 </body>
 
-{{ $script := resources.Get "js/randomise.js" | minify}}
+{{ $script := resources.Get "/js/randomise.js" | minify }}
 <script src="{{ $script.Permalink }}"></script>
 
 </html>
