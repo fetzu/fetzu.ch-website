@@ -4,3 +4,4 @@ static/background.mp4
 static/background.png
 themes/sam/exampleSite/
 *.lock
+.DS_Store

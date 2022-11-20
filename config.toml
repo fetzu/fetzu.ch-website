@@ -22,7 +22,7 @@ pygmentsCodefences       = true
     # rss                = ""
 
 [[params.videoBackground.sources]]
-    source  = "/background.mp4"
+    #source  = "/static/bg-videos"
     type    = "video/mp4"
     poster  = "/background.png"
 [params.videoBackground]
