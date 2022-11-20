@@ -10,10 +10,10 @@ Code:
 Write:
 [ ] Write a better "about" page (maybe?).
 [ ] Write a (half-)good first/introduction post.
-[ ] Look into the footer: (c) v. another kind of licence?
+[X] Look into the footer: (c) v. another kind of licence? -> Leaving the © for now. Might look at how to open-source later (separate content and site)
 
 Content:
-[ ] Find a cool video and/or picture for the background on home page.
+[X] Find a cool video and/or picture for the background on home page.
 [ ] Select samples of work to put into portfolio (photos, video-embeds, writing samples/Rankr, code samples, ...).
-[ ] Create favicon and incorporate it.
+[X] Create favicon and incorporate it.
 [ ] Make image for Open Graph (see config.toml)?
