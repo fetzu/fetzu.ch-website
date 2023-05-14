@@ -11,9 +11,7 @@
     {{ end }}
 
     {{ if .Page.Site.Params.homepage }}
-    <a href="{{ .Site.Home | relURL }}">
-        {{ .Page.Site.Params.homepage }}
-    </a>
+    <a href="{{ .Site.Home | relURL }}">{{ .Page.Site.Params.homepage }}</a>
     &#183; 
     {{ end }}
 
