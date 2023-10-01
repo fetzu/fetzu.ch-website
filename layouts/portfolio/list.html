@@ -1,19 +1,29 @@
 {{ define "section_content" }}
 
 {{ .Content }}
-<br><br><br>
-<h2 id="film">Film</h2>
-{{ range where .Site.RegularPages "Params.category" "film" }}
-  <br>
-  <div class="portfolio-item">
+<script>
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+  
+<br><br>
+<h2 id="code">Code</h2>
+{{ range where .Site.RegularPages "Params.category" "code" }}
+<br>
+<div class="portfolio-item">
     <div class="image-container"><a href="{{ .Params.link }}" style="border-bottom: none;"><img src="{{ .Params.image }}" alt="{{ .Title }}"></a></div>
     <h4><em>{{ .Title }}</em> <span style="font-size: x-small;"><sub>{{ .Params.info }}</sub></span></h4>
     <p>{{ .Description }}</p><br>
-  </div>
-  <br>
+</div>
+<br>
 {{ end }}
 
-<br><br><br>
+<div id="back-to-top" style="display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 20px;" onclick="scrollToTop();">
+    ↑
+  </div>
+
+<br><br>
 <h2 id="art-photography">Photography/Art</h2>
 {{ range where .Site.RegularPages "Params.category" "art-photography" }}
   <br>
@@ -25,6 +35,74 @@
   <br>
 {{ end }}
 
-<br><br><br>Note: This is a random sample of my work. You can find out more by digging around in the <a href="https://console.fetzu.ch/">console</a>.
+<div id="back-to-top" style="display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 20px;" onclick="scrollToTop();">
+    ↑
+  </div>
+
+<br><br>
+<h2 id="writing">Writing</h2>
+{{ range where .Site.RegularPages "Params.category" "writing" }}
+  <br>
+  <div class="portfolio-item">
+    <div class="image-container"><a href="{{ .Params.link }}" style="border-bottom: none;"><img src="{{ .Params.image }}" alt="{{ .Title }}"></a></div>
+    <h4><em>{{ .Title }}</em> <span style="font-size: x-small;"><sub>{{ .Params.info }}</sub></span></h4>
+    <p>{{ .Description }}</p><br>
+  </div>
+  <br>
+{{ end }}
+
+<div id="back-to-top" style="display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 20px;" onclick="scrollToTop();">
+    ↑
+  </div>
+
+<br><br>
+<h2 id="film">Film</h2>
+{{ range where .Site.RegularPages "Params.category" "film" }}
+  <br>
+  <div class="portfolio-item">
+    <div class="image-container"><a href="{{ .Params.link }}" style="border-bottom: none;"><img src="{{ .Params.image }}" alt="{{ .Title }}"></a></div>
+    <h4><em>{{ .Title }}</em> <span style="font-size: x-small;"><sub>{{ .Params.info }}</sub></span></h4>
+    <p>{{ .Description }}</p><br>
+  </div>
+  <br>
+{{ end }}
+
+<div id="back-to-top" style="display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 20px;" onclick="scrollToTop();">
+    ↑
+  </div>
+
+<br><br>
+<h2 id="music">Music</h2>
+{{ range where .Site.RegularPages "Params.category" "music" }}
+  <br>
+  <div class="portfolio-item">
+    <div class="image-container"><a href="{{ .Params.link }}" style="border-bottom: none;"><img src="{{ .Params.image }}" alt="{{ .Title }}"></a></div>
+    <h4><em>{{ .Title }}</em> <span style="font-size: x-small;"><sub>{{ .Params.info }}</sub></span></h4>
+    <p>{{ .Description }}</p><br>
+  </div>
+  <br>
+{{ end }}
+
+<div id="back-to-top" style="display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 20px;" onclick="scrollToTop();">
+    ↑
+  </div>
+
+<br><br>
+<h2 id="radio">Radio</h2>
+{{ range where .Site.RegularPages "Params.category" "radio" }}
+  <br>
+  <div class="portfolio-item">
+    <div class="image-container"><a href="{{ .Params.link }}" style="border-bottom: none;"><img src="{{ .Params.image }}" alt="{{ .Title }}"></a></div>
+    <h4><em>{{ .Title }}</em> <span style="font-size: x-small;"><sub>{{ .Params.info }}</sub></span></h4>
+    <p>{{ .Description }}</p><br>
+  </div>
+  <br>
+{{ end }}
+
+<div id="back-to-top" style="display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 20px;" onclick="scrollToTop();">
+    ↑
+  </div>
+
+<br><br><br>Note: This is just a sample of my work. You can find out more by digging around in the <a href="https://console.fetzu.ch/">console</a>.
 
 {{ end }}
