@@ -50,3 +50,14 @@ pygmentsCodefences       = true
 
 [author]
   name = "Julien 'fetzu' Bono"
+
+[outputFormats]
+  [outputFormats.Sitemap]
+    mediatype = "application/xml"
+    baseName = "sitemap"
+
+[outputs]
+  home = ["HTML", "RSS", "Sitemap"]
+  section = ["HTML", "Sitemap"]
+  taxonomy = ["HTML", "Sitemap"]
+  term = ["HTML"]
