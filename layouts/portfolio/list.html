@@ -1,0 +1,30 @@
+{{ define "section_content" }}
+
+{{ .Content }}
+<br><br><br>
+<h2 id="film">Film</h2>
+{{ range where .Site.RegularPages "Params.category" "film" }}
+  <br>
+  <div class="portfolio-item">
+    <div class="image-container"><a href="{{ .Params.link }}" style="border-bottom: none;"><img src="{{ .Params.image }}" alt="{{ .Title }}"></a></div>
+    <h4><em>{{ .Title }}</em> <span style="font-size: x-small;"><sub>{{ .Params.info }}</sub></span></h4>
+    <p>{{ .Description }}</p><br>
+  </div>
+  <br>
+{{ end }}
+
+<br><br><br>
+<h2 id="art-photography">Photography/Art</h2>
+{{ range where .Site.RegularPages "Params.category" "art-photography" }}
+  <br>
+  <div class="portfolio-item">
+    <div class="image-container"><a href="{{ .Params.link }}" style="border-bottom: none;"><img src="{{ .Params.image }}" alt="{{ .Title }}"></a></div>
+    <h4><em>{{ .Title }}</em> <span style="font-size: x-small;"><sub>{{ .Params.info }}</sub></span></h4>
+    <p>{{ .Description }}</p><br>
+  </div>
+  <br>
+{{ end }}
+
+<br><br><br>Note: This is a random sample of my work. You can find out more by digging around in the <a href="https://console.fetzu.ch/">console</a>.
+
+{{ end }}
