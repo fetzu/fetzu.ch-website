@@ -8,12 +8,13 @@ Code:
 [X] Make footer year (currently (c)) dynamic.
 
 Write:
-[ ] Write a better "about" page (maybe?).
+[X] Write a better "about" page (maybe?). -> Not needed for now, added links to portfolio and console in case it wasn't obvious.
 [ ] Write a (half-)good first/introduction post.
 [X] Look into the footer: (c) v. another kind of licence? -> Leaving the © for now. Might look at how to open-source later (separate content and site)
 
 Content:
 [X] Find a cool video and/or picture for the background on home page.
-[ ] Select samples of work to put into portfolio (photos, video-embeds, writing samples/Rankr, code samples, ...).
+[X] Select samples of work to put into portfolio (photos, video-embeds, writing samples/Rankr, code samples, ...).
+[ ] Integrate all the selected work into the portfolio.
 [X] Create favicon and incorporate it.
 [ ] Make image for Open Graph (see config.toml)?
