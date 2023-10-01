@@ -15,6 +15,6 @@ Write:
 Content:
 [X] Find a cool video and/or picture for the background on home page.
 [X] Select samples of work to put into portfolio (photos, video-embeds, writing samples/Rankr, code samples, ...).
-[ ] Integrate all the selected work into the portfolio.
+[X] Integrate all the selected work into the portfolio.
 [X] Create favicon and incorporate it.
 [ ] Make image for Open Graph (see config.toml)?
