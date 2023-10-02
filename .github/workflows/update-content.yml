@@ -19,7 +19,7 @@ jobs:
             
       - name: Pull & update content submodule recursively
         run: |
-          git submodule update --init --remote content
+          git submodule update --remote --recursive content
 
       - name: Commit updates for content submodule
         run: |
