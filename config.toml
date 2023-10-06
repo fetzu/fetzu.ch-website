@@ -7,6 +7,7 @@ theme                    = ["hugo-cloak-email", "sam"]
 pygmentsStyle            = "friendly"                        # https://help.farbox.com/pygments.html
 pygmentsCodefences       = true
 # googleAnalytics        = ""                               # Tracking code, eg. "UA-111111111-1"
+enableGitInfo = true
 
 [params]
     dateform             = "Mon 02 Jan, 2006"
@@ -50,7 +51,11 @@ pygmentsCodefences       = true
     quality = 75
 
 [author]
-  name = "Julien 'fetzu' Bono"
+    name = "Julien 'fetzu' Bono"
+
+[frontmatter]
+  date = ['date', 'publishdate', 'lastmod', 'modified']
+  lastmod = [':git', 'lastmod', 'modified', 'date']
 
 [outputFormats]
   [outputFormats.Sitemap]
@@ -58,7 +63,7 @@ pygmentsCodefences       = true
     baseName = "sitemap"
 
 [outputs]
-  home = ["HTML", "RSS", "Sitemap"]
-  section = ["HTML", "Sitemap"]
-  taxonomy = ["HTML", "Sitemap"]
-  term = ["HTML"]
+    home = ["HTML", "RSS", "Sitemap"]
+    section = ["HTML", "Sitemap"]
+    taxonomy = ["HTML", "Sitemap"]
+    term = ["HTML"]
