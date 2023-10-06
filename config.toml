@@ -54,7 +54,7 @@ pygmentsCodefences       = true
     name = "Julien 'fetzu' Bono"
 
 [frontmatter]
-    lastmod = [':fileModTime', 'modified']
+    lastmod = ['date', ':fileModTime']
 
 [outputFormats]
   [outputFormats.Sitemap]
