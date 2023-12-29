@@ -7,7 +7,7 @@
 {{ if .Site.Params.description }}
 <meta name="description" content="{{ .Site.Params.description }}">{{ end }}
 <title>
-    {{ .Title | markdownify }}fetzu.ch | {{ if ne .Title .Site.Title }}{{ end }}
+    fetzu.ch | {{ .Title | markdownify }}{{ if ne .Title .Site.Title }}{{ end }}
 </title>
 <!-- RSS -->
 {{- with .OutputFormats.Get "RSS" -}}
