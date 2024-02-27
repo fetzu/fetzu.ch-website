@@ -1,5 +1,5 @@
 # [fetzu.ch](https://fetzu.ch)
-[![Update content](https://github.com/fetzu/fetzu.ch-website/actions/workflows/update-content.yml/badge.svg?branch=main)](https://github.com/fetzu/fetzu.ch-website/actions/workflows/update-content.yml) [![Netlify Status](https://api.netlify.com/api/v1/badges/af6cb19b-4723-4388-a3ae-e2526c3d9ff1/deploy-status)](https://app.netlify.com/sites/fetzuch-main/deploys)
+[![Update content](https://github.com/fetzu/fetzu.ch-website/actions/workflows/update-content.yml/badge.svg?branch=main)](https://github.com/fetzu/fetzu.ch-website/actions/workflows/update-content.yml)
 
 This is how ~~the sausage~~ fetzu.ch is made: a (or, rather, one of two) [GitHub Action](.github/workflows/update-content.yml) pulls the content from a private content repo, commits the changes as "Content Manager" which are then built and deployed over [CloudFlare Pages](https://fetzu-ch-website.pages.dev). Yes, it's that easy.   
 
