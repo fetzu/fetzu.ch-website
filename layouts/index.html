@@ -38,9 +38,9 @@
         {{ end }}
 
     </nav>
+    
+    {{ $script := resources.Get "/js/randomise.js" | minify }}
+    <script src="{{ $script.Permalink }}"></script>
+    
 </body>
-
-{{ $script := resources.Get "/js/randomise.js" | minify }}
-<script src="{{ $script.Permalink }}"></script>
-
 </html>
