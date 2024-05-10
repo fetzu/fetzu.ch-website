@@ -1,4 +1,4 @@
-baseurl                  = "https://www.fetzu.ch/"           # Your domain name
+baseurl                  = "https://fetzu.ch/"           # Your domain name
 languageCode             = "en-us"
 defaultContentLanguage   = "en"
 isMultilingual           = false
