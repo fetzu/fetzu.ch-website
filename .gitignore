@@ -6,3 +6,4 @@ themes/sam/exampleSite/
 *.lock
 .DS_Store
 content
+/public
