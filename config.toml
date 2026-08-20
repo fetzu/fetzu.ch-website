@@ -47,6 +47,9 @@ pygmentsCodefences       = true
     link = "about"
     text = "who is fetzu?"
 
+[markup.goldmark.renderer]
+    unsafe = true                                       # Keep inline HTML instead of silently dropping it
+
 [imaging]
     quality = 75
 
