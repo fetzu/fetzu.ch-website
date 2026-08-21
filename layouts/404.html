@@ -1,0 +1,29 @@
+<!-- The theme ships a 404.html that has been empty since 2019, so Cloudflare answered unknown URLs with the homepage and a 200. This one is real. -->
+<!-- Standalone (no baseof here): mirrors the skeleton of themes/sam/layouts/_default/baseof.html -->
+<!DOCTYPE html>
+<html lang="{{ site.Language.Lang }}">
+
+<head>
+    {{ partial "head.html" . }}
+    <title>404 | {{ site.Title }}</title>
+</head>
+
+<body>
+    <header class="wrap flex-container">
+        <h1>404</h1>
+    </header>
+    <main class="wrap">
+        <article role="article" class="flex-container">
+            <p>There is nothing at this address. The URL might be wrong, or the thing might be gone; either way, you should probably head <a href="/">home</a> or to the <a href="/blog/">blog</a>.</p>
+        </article>
+
+        {{ if .Site.Params.mainMenu }}
+        <nav role="navigation" class="flex-container bottom-menu">
+            {{ partial "bottom_menu.html" (dict "Page" . "show_back_menu_item" false) }}
+        </nav>
+        {{ end }}
+    </main>
+    <footer class="flex-container footer">{{ partial "footer.html" . }}</footer>
+</body>
+
+</html>

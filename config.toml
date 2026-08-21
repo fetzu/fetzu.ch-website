@@ -1,11 +1,8 @@
 baseurl                  = "https://fetzu.ch/"           # Your domain name
-languageCode             = "en-us"
+locale                   = "en-us"                       # Was languageCode | deprecated in Hugo 0.158
 defaultContentLanguage   = "en"
-isMultilingual           = false
 title                    = "fetzu dot ch: palace of the meh"
 theme                    = ["hugo-cloak-email", "sam"]
-pygmentsStyle            = "friendly"                        # https://help.farbox.com/pygments.html
-pygmentsCodefences       = true
 # googleAnalytics        = ""                               # Tracking code, eg. "UA-111111111-1"
 #enableGitInfo            = true
 
@@ -50,22 +47,24 @@ pygmentsCodefences       = true
 [markup.goldmark.renderer]
     unsafe = true                                       # Keep inline HTML instead of silently dropping it
 
+[markup.highlight]
+    style = "friendly"                                  # Was pygmentsStyle | https://xyproto.github.io/splash/docs/all.html
+    codeFences = true                                   # Was pygmentsCodefences
+
 [imaging]
     quality = 75
 
-[author]
-    name = "Julien 'fetzu' Bono"
+[params.author]
+    name = "Julien 'fetzu' Bono"                        # Was [author] | .Site.Author left with Hugo 0.155ish
 
 [frontmatter]
     lastmod = ['date', ':fileModTime']
 
-[outputFormats]
-  [outputFormats.Sitemap]
-    mediatype = "application/xml"
-    baseName = "sitemap"
+# NOTE: the old custom [outputFormats.Sitemap] made four pages race for /sitemap.xml;
+# the built-in sitemap (rendered through layouts/_default/sitemap.xml) does the job alone.
 
 [outputs]
-    home = ["HTML", "RSS", "Sitemap"]
-    section = ["HTML", "Sitemap"]
-    taxonomy = ["HTML", "Sitemap"]
+    home = ["HTML", "RSS"]
+    section = ["HTML", "RSS"]                           # RSS so /blog/index.xml (the feed the footer links to) actually exists
+    taxonomy = ["HTML"]
     term = ["HTML"]

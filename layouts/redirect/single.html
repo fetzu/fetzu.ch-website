@@ -1,1 +1,11 @@
-{{- template "_internal/alias.html" (dict "Permalink" .Params.target) -}}
+<!-- Hand-rolled clone of Hugo's alias page; calling "_internal/alias.html" died with the 0.146 template revamp (https://gohugo.io/templates/new-templatesystem-overview/) -->
+<!DOCTYPE html>
+<html lang="{{ site.Language.Lang }}">
+<head>
+    <title>{{ .Params.target }}</title>
+    <link rel="canonical" href="{{ .Params.target }}">
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0; url={{ .Params.target }}">
+</head>
+</html>

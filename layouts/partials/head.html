@@ -3,4 +3,6 @@
 {{ partial "head/css.html" . }}
 <link rel="stylesheet" href="/css/fonts.css">
 
+<link rel="canonical" href="{{ .Permalink }}" />
 {{ template "_internal/opengraph.html" . }}
+{{ partial "head/schema.html" . }}
