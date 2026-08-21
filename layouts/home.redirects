@@ -24,15 +24,25 @@
 {{ .RelPermalink }} {{ .Params.target }} 301
 {{- end }}
 
-# Every dated blog post answers on /blog/YYYY/MM/DD/slug/ and /blog/slug/ too
-# NOTE: slugs must stay unique; on a clash the first (oldest URL) rule wins
+# Every blog post answers on the dateless /blog/slug/ and on its pre-flip
+# /blog/YYYYMMDD_slug/ address (canonical is /blog/YYYY/MM/DD/slug/ since 2026-08).
+# Bare front matter aliases land next to the post (Hugo's doing), so they only
+# need their dateless twin here. NOTE: slugs must stay unique; on a clash the
+# first (oldest) rule wins.
 {{- range (where site.RegularPages "Section" "blog").ByDate }}
-{{- $base := path.Base .RelPermalink }}
-{{- $short := replaceRE `^\d{8}[_-]` "" $base }}
-{{- if ne $short $base }}
-/blog/{{ .Date.Format "2006/01/02" }}/{{ $short }} {{ .RelPermalink }} 301
-/blog/{{ .Date.Format "2006/01/02" }}/{{ $short }}/ {{ .RelPermalink }} 301
-/blog/{{ $short }} {{ .RelPermalink }} 301
-/blog/{{ $short }}/ {{ .RelPermalink }} 301
+{{- $canonical := .RelPermalink }}
+{{- $slug := path.Base $canonical }}
+{{- $datedir := printf "/blog/%s/" (.Date.Format "2006/01/02") }}
+/blog/{{ $slug }} {{ $canonical }} 301
+/blog/{{ $slug }}/ {{ $canonical }} 301
+{{- if not (findRE `^\d{8}[_-]` $slug) }}
+/blog/{{ .Date.Format "20060102" }}_{{ $slug }} {{ $canonical }} 301
+/blog/{{ .Date.Format "20060102" }}_{{ $slug }}/ {{ $canonical }} 301
+{{- end }}
+{{- range .Aliases }}
+{{- if hasPrefix . $datedir }}
+/blog/{{ path.Base . }} {{ $canonical }} 301
+/blog/{{ path.Base . }}/ {{ $canonical }} 301
+{{- end }}
 {{- end }}
 {{- end }}

@@ -58,7 +58,11 @@ theme                    = ["hugo-cloak-email", "sam"]
     name = "Julien 'fetzu' Bono"                        # Was [author] | .Site.Author left with Hugo 0.155ish
 
 [frontmatter]
+    date = [':filename', ':default']                    # 2026-08-19-name.md carries the date, the leftover becomes the slug
     lastmod = ['date', ':fileModTime']
+
+[permalinks.page]
+    blog = "/blog/:year/:month/:day/:slugorfilename/"   # Date-based canonicals | SEE layouts/home.redirects for the shortcuts
 
 [module]
     # Union-mount the content submodule with content-extra/ (which lives in THIS repo),

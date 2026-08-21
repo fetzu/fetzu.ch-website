@@ -1,5 +1,5 @@
 {{/* Builds the /blog/YYYY/, /blog/YYYY/MM/ and /blog/YYYY/MM/DD/ archive pages. */}}
-{{/* Content adapters cannot see the site's page collection (SEE https://gohugo.io/content-management/content-adapters/), so we grub the dates straight out of the posts' front matter. */}}
+{{/* Content adapters cannot see the site's page collection (SEE https://gohugo.io/content-management/content-adapters/), so we grub the dates straight out of the file names (2026-08-19-name.md) or, failing that, the front matter. */}}
 {{/* NOTE: drafts are skipped, so their archive pages will not exist under "hugo server -D" either. */}}
 
 {{/* Collect every year, year/month and year/month/day that has at least one post */}}
@@ -9,11 +9,16 @@
   {{ if and (not $f.IsDir) (strings.HasSuffix $name ".md") (ne $name "_index.md") }}
     {{ $raw := os.ReadFile (printf "content/blog/%s" $name) }}
     {{ if not (findRE `(?m)^draft:\s*true\s*$` $raw 1) }}
-      {{ $m := findRESubmatch `(?m)^date:\s*['"]?(\d{4})-(\d{2})-(\d{2})` $raw 1 }}
-      {{ with index $m 0 }}
-        {{ $y := index . 1 }}
-        {{ $mo := index . 2 }}
-        {{ $d := index . 3 }}
+      {{/* The 2026-08-19-name.md convention names the date; front matter is the fallback */}}
+      {{ $m := findRESubmatch `^(\d{4})-(\d{2})-(\d{2})-` $name 1 }}
+      {{ if not $m }}
+        {{ $m = findRESubmatch `(?m)^date:\s*['"]?(\d{4})-(\d{2})-(\d{2})` $raw 1 }}
+      {{ end }}
+      {{ if $m }}
+        {{ $g := index $m 0 }}
+        {{ $y := index $g 1 }}
+        {{ $mo := index $g 2 }}
+        {{ $d := index $g 3 }}
         {{ $archives = merge $archives (dict
              $y true
              (printf "%s/%s" $y $mo) true
