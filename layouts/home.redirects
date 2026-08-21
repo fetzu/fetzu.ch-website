@@ -1,0 +1,38 @@
+{{- /* Cloudflare Pages _redirects, generated at build time (SEE config.toml [outputFormats.REDIRECTS]) */ -}}
+{{- /* Cloudflare stops at the first matching rule, so keep the specific stuff on top */ -}}
+# Machine made, do not edit by hand: Hugo builds this from layouts/home.redirects
+
+# The /console shortcut (used to live in static/_redirect, where Cloudflare never looked)
+/console https://console.fetzu.ch/ 301
+/console/ https://console.fetzu.ch/ 301
+
+# Aliases set in front matter get a proper 301 on top of Hugo's meta-refresh page
+# (absolute ones only; pages of type "redirect" point straight at their target)
+{{- range site.Pages }}
+{{- $target := .RelPermalink }}
+{{- if eq .Type "redirect" }}{{ $target = .Params.target }}{{ end }}
+{{- range .Aliases }}
+{{- if strings.HasPrefix . "/" }}
+{{ strings.TrimSuffix "/" . }} {{ $target }} 301
+{{ strings.TrimSuffix "/" . }}/ {{ $target }} 301
+{{- end }}
+{{- end }}
+{{- end }}
+
+# Pages of type "redirect" (e.g. /cv/) 301 to their target
+{{- range where site.Pages "Type" "redirect" }}
+{{ .RelPermalink }} {{ .Params.target }} 301
+{{- end }}
+
+# Every dated blog post answers on /blog/YYYY/MM/DD/slug/ and /blog/slug/ too
+# NOTE: slugs must stay unique; on a clash the first (oldest URL) rule wins
+{{- range (where site.RegularPages "Section" "blog").ByDate }}
+{{- $base := path.Base .RelPermalink }}
+{{- $short := replaceRE `^\d{8}[_-]` "" $base }}
+{{- if ne $short $base }}
+/blog/{{ .Date.Format "2006/01/02" }}/{{ $short }} {{ .RelPermalink }} 301
+/blog/{{ .Date.Format "2006/01/02" }}/{{ $short }}/ {{ .RelPermalink }} 301
+/blog/{{ $short }} {{ .RelPermalink }} 301
+/blog/{{ $short }}/ {{ .RelPermalink }} 301
+{{- end }}
+{{- end }}

@@ -60,11 +60,32 @@ theme                    = ["hugo-cloak-email", "sam"]
 [frontmatter]
     lastmod = ['date', ':fileModTime']
 
-# NOTE: the old custom [outputFormats.Sitemap] made four pages race for /sitemap.xml;
-# the built-in sitemap (rendered through layouts/_default/sitemap.xml) does the job alone.
+[module]
+    # Union-mount the content submodule with content-extra/ (which lives in THIS repo),
+    # so build machinery like the blog archives adapter stays out of the content repo.
+    [[module.mounts]]
+        source = "content"
+        target = "content"
+    [[module.mounts]]
+        source = "content-extra"
+        target = "content"
+
+[mediaTypes."text/redirects"]
+    delimiter = ""                                      # No extension: Cloudflare wants the file named exactly "_redirects"
+
+[outputFormats]
+  # NOTE: the old custom [outputFormats.Sitemap] made four pages race for /sitemap.xml;
+  # the built-in sitemap (rendered through layouts/_default/sitemap.xml) does the job alone.
+  [outputFormats.REDIRECTS]
+    # Cloudflare Pages redirects, built from layouts/home.redirects
+    # SEE https://developers.cloudflare.com/pages/configuration/redirects/
+    mediaType = "text/redirects"
+    baseName = "_redirects"
+    isPlainText = true
+    notAlternative = true
 
 [outputs]
-    home = ["HTML", "RSS"]
+    home = ["HTML", "RSS", "REDIRECTS"]
     section = ["HTML", "RSS"]                           # RSS so /blog/index.xml (the feed the footer links to) actually exists
     taxonomy = ["HTML"]
     term = ["HTML"]

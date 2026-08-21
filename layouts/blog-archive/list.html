@@ -3,12 +3,12 @@
 			{{ .Content }}
 	</article>
     <nav role="navigation">
-		{{- /* RegularPages (and not Data.Pages) so the /blog/YYYY/ archive sections do not list themselves */ -}}
-		{{- range .RegularPages.GroupByDate "2006" }}
 		<div class="posts-group">
-			<div class="post-year" id="{{ .Key }}"><a href="/blog/{{ .Key }}/">{{ .Key }}</a></div>
 			<ul class="posts-list">
-				{{- range .Pages }}
+				{{- /* The archive param holds "YYYY", "YYYY/MM" or "YYYY/MM/DD"; match it against each post's date */ -}}
+				{{- $prefix := .Params.archive }}
+				{{- range where site.RegularPages "Section" "blog" }}
+				{{- if strings.HasPrefix (.Date.Format "2006/01/02") $prefix }}
                 <li>
                     {{ if .Params.showDate }}
                     {{ .Date.Format (.Site.Params.dateformshort)}} >>
@@ -18,9 +18,8 @@
                     </a>
                 </li>
 				{{- end }}
-			<br>
+				{{- end }}
 			</ul>
 		</div>
-		{{- end }}
 	</nav>
 {{ end }}
